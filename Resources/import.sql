@@ -22,10 +22,12 @@ CREATE TABLE Class (
 
 DROP TABLE IF EXISTS Student;
 CREATE TABLE Student (
+
    Name varchar(255) NOT NULL,
    Email varchar(255) NOT NULL,
    Class varchar(255),
    PRIMARY KEY (Name),
    FOREIGN KEY (Class) REFERENCES Class(Name)
 );
+
 
