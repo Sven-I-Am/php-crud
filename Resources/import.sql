@@ -20,6 +20,11 @@ CREATE TABLE Class (
      FOREIGN KEY (Teacher) REFERENCES Teacher(Name)
 );
 
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Lamarr', 'Antwerpen', 'Tim Broos');
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Jepsen', 'Liege', 'Nicolas Jamar');
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Keller', 'Charleroi', 'Arnaud Duchemin');
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Swartz', 'Brussel', 'Ludovic Patho');
+
 DROP TABLE IF EXISTS Student;
 CREATE TABLE Student (
 
