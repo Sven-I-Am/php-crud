@@ -9,5 +9,5 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to my site</h1>
+        <h1>Welcome to Becode</h1>
     </header>
