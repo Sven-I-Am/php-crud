@@ -1,2 +1,6 @@
-# php-crud
-group exercise in week 11 (06/121/2021 - 10/12/2021) of our BeCode training
+# php mvc boilerplate
+This repo contains a very simple, very basic skelleton for MVC projects.
+
+This is only meant for educational purposes, not to be used in real life projects!
+
+@Author Koen Eelen
