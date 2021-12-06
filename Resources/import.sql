@@ -35,4 +35,8 @@ CREATE TABLE Student (
    FOREIGN KEY (Class) REFERENCES Class(Name)
 );
 
-
+INSERT INTO student (name, email, class) values ('Katya Heylen', 'katyaheylen@gmail.com', 'Lamarr');
+INSERT INTO student (name, email, class) values ('Sven Vander Mierde', 'sven.vander.mierde@gmail.com', 'Lamarr');
+INSERT INTO student (name, email, class) values ('Stefan Amuraritei', 'stefan@gmail.com', 'Jepsen');
+INSERT INTO student (name, email, class) values ('Prince Prince', 'prince@yahoo.com', 'Swartz');
+INSERT INTO student (name, email, class) values ('Pokemon Pokemonovich', 'pokemon@gmail.com', 'Keller');
