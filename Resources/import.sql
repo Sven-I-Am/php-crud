@@ -1,8 +1,26 @@
 DROP TABLE IF EXISTS Teacher;
 CREATE TABLE Teacher (
+     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
      Name varchar(255) NOT NULL,
-     Email varchar(255),
-     PRIMARY KEY (Name)
+     Email varchar(255)
+);
+
+DROP TABLE IF EXISTS Class;
+CREATE TABLE Class (
+    ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Name varchar(255) NOT NULL,
+    Location varchar(255) NOT NULL,
+    Teacher INT UNSIGNED,
+    FOREIGN KEY (Teacher) REFERENCES Teacher(ID)
+);
+
+DROP TABLE IF EXISTS Student;
+CREATE TABLE Student (
+    ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Name varchar(255) NOT NULL,
+    Email varchar(255) NOT NULL,
+    Class INT UNSIGNED,
+    FOREIGN KEY (Class) REFERENCES Class(ID)
 );
 
 INSERT INTO Teacher(Name, Email) VALUES ('Tim Broos', 'tim.broos@becode.org');
@@ -10,33 +28,13 @@ INSERT INTO Teacher(Name, Email) VALUES ('Ludovic Patho', 'ludovic.patho@becode.
 INSERT INTO Teacher(Name, Email) VALUES ('Arnaud Duchemin', 'arnaud.uchemin@becode.org');
 INSERT INTO Teacher(Name, Email) VALUES ('Nicolas Jamar', 'nicolas.jamar@becode.org');
 
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Lamarr', 'Antwerpen', 1);
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Jepsen', 'Liege', 4);
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Keller', 'Charleroi', 3);
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Swartz', 'Brussel', 2);
 
-DROP TABLE IF EXISTS Class;
-CREATE TABLE Class (
-     Name varchar(255) NOT NULL,
-     Location varchar(255) NOT NULL,
-     Teacher varchar(255),
-     PRIMARY KEY (Name),
-     FOREIGN KEY (Teacher) REFERENCES Teacher(Name)
-);
-
-INSERT INTO Class(Name, Location, Teacher) VALUES ('Lamarr', 'Antwerpen', 'Tim Broos');
-INSERT INTO Class(Name, Location, Teacher) VALUES ('Jepsen', 'Liege', 'Nicolas Jamar');
-INSERT INTO Class(Name, Location, Teacher) VALUES ('Keller', 'Charleroi', 'Arnaud Duchemin');
-INSERT INTO Class(Name, Location, Teacher) VALUES ('Swartz', 'Brussel', 'Ludovic Patho');
-
-DROP TABLE IF EXISTS Student;
-CREATE TABLE Student (
-
-   Name varchar(255) NOT NULL,
-   Email varchar(255) NOT NULL,
-   Class varchar(255),
-   PRIMARY KEY (Name),
-   FOREIGN KEY (Class) REFERENCES Class(Name)
-);
-
-INSERT INTO student (name, email, class) values ('Katya Heylen', 'katyaheylen@gmail.com', 'Lamarr');
-INSERT INTO student (name, email, class) values ('Sven Vander Mierde', 'sven.vander.mierde@gmail.com', 'Lamarr');
-INSERT INTO student (name, email, class) values ('Stefan Amuraritei', 'stefan@gmail.com', 'Jepsen');
-INSERT INTO student (name, email, class) values ('Prince Prince', 'prince@yahoo.com', 'Swartz');
-INSERT INTO student (name, email, class) values ('Pokemon Pokemonovich', 'pokemon@gmail.com', 'Keller');
+INSERT INTO student (Name, Email, Class) values ('Katya Heylen', 'katyaheylen@gmail.com', 1);
+INSERT INTO student (Name, Email, Class) values ('Sven Vander Mierde', 'sven.vander.mierde@gmail.com', 1);
+INSERT INTO student (Name, Email, Class) values ('Stefan Amuraritei', 'stefan@gmail.com', 2);
+INSERT INTO student (Name, Email, Class) values ('Prince Prince', 'prince@yahoo.com', 4);
+INSERT INTO student (Name, Email, Class) values ('Pokemon Pokemonovich', 'pokemon@gmail.com', 3);
