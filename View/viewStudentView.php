@@ -16,6 +16,7 @@
                     <td><?php echo $student[0]["Name"]; ?></td>
                     <td><?php echo $student[0]["Email"]; ?></td>
                     <td><?php echo $student[0]["ClassName"]; ?></td>
+                    <td><?php echo $student[0]["TeacherName"]; ?></td>
                     <td class="button-cell">
                         <a class="button-Link editBtn" href="index.php?page=editStudent&id=<?php echo $student[0]["ID"]; ?>">Edit</a>
                     </td>

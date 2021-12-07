@@ -104,8 +104,8 @@ On the general overview table you can yourself decide what would be useful infor
 On the detailed overview you have to provide the following information:
 
 * Student 
-  * Name
-  * Email
+  * Name :heavy_check_mark:
+  * Email :heavy_check_mark:
   * Class (with clickable link)
   * Assigned teacher (clickable link - relation via class) 
 * Teacher

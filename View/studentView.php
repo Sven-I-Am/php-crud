@@ -1,4 +1,4 @@
-<?php require 'includes/header.php'?>
+<?php require 'includes/header.php' ?>
 <!-- this is the view, try to put only simple if's and loops here.
 Anything complex should be calculated in the model -->
 <section id="students">
@@ -12,6 +12,7 @@ Anything complex should be calculated in the model -->
                 <th>Name</th>
                 <th>Email</th>
                 <th>Class</th>
+                <th>Teacher</th>
                 <th>View</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -22,6 +23,7 @@ Anything complex should be calculated in the model -->
                     <td><?php echo $student["Name"]; ?></td>
                     <td><?php echo $student["Email"]; ?></td>
                     <td><?php echo $student["ClassName"]; ?></td>
+                    <td><?php echo $student["TeacherName"]; ?></td>
                     <td class="button-cell">
                         <a class="button-Link viewBtn" href="index.php?page=viewStudent&id=<?php echo $student["ID"]; ?>">View</a>
                     </td>
