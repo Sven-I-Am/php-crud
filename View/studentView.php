@@ -1,47 +1,40 @@
 <?php require 'includes/header.php'?>
 <!-- this is the view, try to put only simple if's and loops here.
 Anything complex should be calculated in the model -->
-<section>
-    <h3>Student overview</h3>
-    <p><a href="index.php?page=info">Back to Homepage</a></p>
+<section id="students">
+    <div id="showStudents">
+        <h3>Student overview</h3>
+        <div class="button-div">
+            <a class="button-Link addBtn" href="index.php?page=addStudent">Add a student</a>
+        </div>
         <table>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Class</th>
+                <th>View</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><a href=""></a></td>
-                <td>
-                    <form method="" action="">
-                        <button type="submit" id="edit" name="edit" value="edit" class="btn btn-primary">Edit</button>
-                    </form>
-                </td>
-                <td>
-                    <form method="" action="">
-                        <button type="submit" id="delete" name="delete" value="delete" class="btn btn-primary">Delete</button>
-                    </form>
-                </td>
-            </tr>
+            <?php
+            foreach ($students as $student){ ?>
+                <tr>
+                    <td><?php echo $student["Name"]; ?></td>
+                    <td><?php echo $student["Email"]; ?></td>
+                    <td><?php echo $student["ClassName"]; ?></td>
+                    <td class="button-cell">
+                        <a class="button-Link viewBtn" href="index.php?page=viewStudent&id=<?php echo $student["ID"]; ?>">View</a>
+                    </td>
+                    <td class="button-cell">
+                        <a class="button-Link editBtn" href="index.php?page=editStudent&id=<?php echo $student["ID"]; ?>">Edit</a>
+                    </td>
+                    <td class="button-cell">
+                        <a class="button-Link deleteBtn" href="index.php?page=deleteStudent&id=<?php echo $student["ID"]; ?>">Delete</a>
+                    </td>
+                </tr>
+            <?php } ?>
         </table>
-        <div class="new">
-            <form method="">
-                <label>Student Name</label>
-                <input type="text" name="studentName" id="sName" value="" placeholder="Enter student's name">
-                <label>Student Email</label>
-                <input type="text" name="studentEmail" id="sEmail" value="" placeholder="Enter student's Email">
-                <label>Class</label>
-                <select class="className" id="className">
-                    <option></option>
-                </select>
-            </form>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary" name="add" id="add" value="">Add a new student</button>
-        </div>
+
+    </div>
 </section>
-<?php require 'includes/footer.php'?>
+<?php require 'includes/footer.php' ?>
