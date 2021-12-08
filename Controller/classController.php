@@ -49,6 +49,12 @@ class classController
                 $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';
                 break;
+            case "deleteClass":
+                $classId = (int)$_GET["id"];
+                ClassLoader::deleteClass($this->db, $classId);
+                $classes = ClassLoader::getAllClasses($this->db);
+                require 'View/classView.php';
+                break;
                 
         }
     }

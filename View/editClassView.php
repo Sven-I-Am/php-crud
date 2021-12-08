@@ -18,7 +18,7 @@
                     <option value="3">4</option>
                 </select>
                 <input type="submit" class="button-Link addBtn" value="Save"></input>
-                <a class="button-Link deleteBtn" href="index.php?page=deleteStudent&id=<?php echo $student[0]["ID"]; ?>">Delete</a>
+                <a class="button-Link deleteBtn" href="index.php?page=deleteClass&id=<?php echo $oneClass[0]["ID"]; ?>">Delete</a>
             </form>
         </div>
     </section>
