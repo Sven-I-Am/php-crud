@@ -18,5 +18,7 @@
                 <li><a href="index.php?page=classes">Classes</a></li>
             </ul>
         </nav>
+
     </header>
     <main>
+        <div id="spacing-top"></div>

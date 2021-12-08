@@ -34,10 +34,15 @@ footer {
     color: var(--text-color-light);
 }
 main {
-    padding: 120px auto;
     height: 100VH;
+    width: 80VW;
+    margin: auto;
     display: grid;
     justify-content: center;
+}
+#spacing-top,
+#spacing-bottom {
+    height: 120px;
 }
 
 /*reusables*/
@@ -159,24 +164,33 @@ footer {
 }
 
 /*students view*/
-#students,
-#classes,
-#teachers {
-    margin: 120px 0 60px 0;
-}
 
 #students h3 {
     text-align: center;
     margin-bottom: 2em;
 }
 
+@media (max-width: 1400px){
+    body {
+        font-size: 20px;
+    }
+    td {
+        padding: 0.75em;
+    }
+}
 @media (max-width: 1250px){
     body {
         font-size: 18px;
     }
+    td {
+        padding: 0 0.2em;
+    }
 }
-@media (max-width: 900px){
+@media (max-width: 1000px){
     body {
         font-size: 16px;
+    }
+    td {
+        padding: 0;
     }
 }

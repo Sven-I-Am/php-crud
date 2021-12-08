@@ -1,4 +1,5 @@
-    </main>
+<div id="spacing-bottom"></div>
+</main>
     <footer>
        <p id="madeBy">Made by Katya, Sven and Xiaoqi</p>
        <p id="copy"> &copy; BeCode <?php echo date('Y')?></p>
