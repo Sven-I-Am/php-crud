@@ -24,6 +24,9 @@ require'.env';
 
 require 'Model/student.php';
 require 'Model/studentLoader.php';
+require 'Model/teacher.php';
+require 'Model/teacherLoader.php';
+
 
 //include all your controllers here
 require 'Controller/studentController.php';
@@ -44,7 +47,7 @@ if(empty($_GET) || $_GET["page"] === "home"){
 if($_GET["page"] === "students" || $_GET["page"] === "addStudent" || $_GET["page"] === "studentAdd" || $_GET["page"] === "viewStudent" || $_GET["page"] === "editStudent" || $_GET["page"] === "studentEdit" || $_GET["page"] === "deleteStudent"){
     $studentController->render($_GET, $_POST);
 }
-if(empty($_GET) || $_GET["page"] === "teachers"){
+if(empty($_GET) || $_GET["page"] === "teachers" || $_GET["page"] === "viewTeacher" || $_GET["page"] === "addTeacher" || $_GET["page"] === "teacherAdd" || $_GET["page"] === "editTeacher" || $_GET["page"] === "teacherEdit" || $_GET["page"] === "deleteTeacher") {
     $teacherController->render($_GET, $_POST);
 }
 if(empty($_GET) || $_GET["page"] === "classes"){
