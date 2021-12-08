@@ -29,10 +29,18 @@ class ClassLoader
         return $teacherName[0]["Name"];
     }
 
-    // public static function addClass(PDO $PDO, string $className, string $location, string $teacherName)
-    // {
-    //     $handler = $PDO->query('')
-    // }
+    public static function addClass(PDO $PDO, string $className, string $location, int $teacherName)
+    {
+        $handler = $PDO->query('INSERT INTO class(Name, Location, Teacher) VALUES ("' . $className . '", "' . $location . '", ' . $teacherName . ')');
+    }
+    
+    public static function deleteClass(PDO $PDO, int $classID)
+    {
+        $handler = $PDO->query('DELETE FROM class WHERE ID = '. $classID);
+    }
 
-
+    public static function editClass(PDO $PDO, int $classID, string $className, string $location, int $teacherName)
+    {
+        $handler = $PDO->query('UPDATE class SET ID=  '. $classID .' , Name= "' . $className . '", Location="' . $location . '", Teacher=' . $teacherName . ' WHERE ID=' . $classID);
+    }
 }

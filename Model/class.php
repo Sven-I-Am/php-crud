@@ -17,22 +17,22 @@ class Classes
         $this->teacherName = $teacherName;
     }
 
-    public function getClassID()
+    public function getClassID(): int
     {
         return $this->classID;
     }
     
-    public function getClassName()
+    public function getClassName(): string
     {
         return $this->className;
     }
 
-    public function getLocation()
+    public function getLocation() :string
     {
         return $this->location;
     }
 
-    public function getTeacherName()
+    public function getTeacherName(): string
     {
         return $this->teacherName;
     }

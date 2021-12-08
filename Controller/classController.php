@@ -19,6 +19,37 @@ class classController
                 $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';
                 break;
+            case "viewClass":
+                $classId = (int)$_GET["id"];
+                $oneClass = ClassLoader::getClass($this->db, $classId);
+                require 'View/viewClassView.php';
+                break;
+            case "addClass":
+                require 'View/addClassView.php';
+                break;
+            case "classAdd":
+                $className = $_POST["className"];
+                $location = $_POST["loction"];
+                $teacherName = (int)$_POST["teacherName"];
+                $oneClass = ClassLoader::addClass($this->db, $className,  $location, $teacherName);
+                $classes = ClassLoader::getAllClasses($this->db);
+                require 'View/classView.php';
+                break;
+            case "editClass":
+                $classId = (int)$_GET["id"];
+                $oneClass = ClassLoader::getClass($this->db, $classId);
+                require 'View/editClassView.php';
+                break;
+            case "classEdit":
+                $classId = (int)$_GET["id"];
+                $className = $_POST["className"];
+                $location = $_POST["location"];
+                $teacherName = (int)$_POST["teacherName"];
+                $oneClass = ClassLoader::editClass($this->db, $classId, $className, $location, $teacherName);
+                $classes = ClassLoader::getAllClasses($this->db);
+                require 'View/classView.php';
+                break;
+                
         }
     }
 }

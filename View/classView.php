@@ -6,7 +6,7 @@
             <h3>Classes overview</h3>
         </div>
         <div class="button-div">
-            <a class="button-Link addBtn" href="index.php?page=addStudent">Add a class</a>
+            <a class="button-Link addBtn" href="index.php?page=addClass">Add a class</a>
         </div>
         <table>
             <tr>
@@ -24,13 +24,13 @@
                     <td><?php echo $eachClass["Location"]; ?></td>
                     <td><?php echo $eachClass["TeacherName"]; ?></td>
                     <td class="button-cell">
-                        <a class="button-Link viewBtn" href="index.php?page=viewStudent&id=<?php echo $student["ID"]; ?>">View</a>
+                        <a class="button-Link viewBtn" href="index.php?page=viewClass&id=<?php echo $eachClass["ID"]; ?>">View</a>
                     </td>
                     <td class="button-cell">
-                        <a class="button-Link editBtn" href="index.php?page=editStudent&id=<?php echo $student["ID"]; ?>">Edit</a>
+                        <a class="button-Link editBtn" href="index.php?page=editClass&id=<?php echo $eachClass["ID"]; ?>">Edit</a>
                     </td>
                     <td class="button-cell">
-                        <a class="button-Link deleteBtn" href="index.php?page=deleteStudent&id=<?php echo $student["ID"]; ?>">Delete</a>
+                        <a class="button-Link deleteBtn" href="index.php?page=deleteClass&id=<?php echo $eachClass["ID"]; ?>">Delete</a>
                     </td>
                 </tr>
             <?php } ?>
