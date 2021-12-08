@@ -16,6 +16,7 @@ class classController
         //load the view
         switch($_GET["page"]) {
             case "classes":
+                $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';
                 break;
         }

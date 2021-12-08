@@ -4,27 +4,27 @@ declare(strict_types=1);
 
 class Classes
 {
-    private int $id;
-    private string $name;
+    private int $classID;
+    private string $className;
     private string $location;
-    private string $teacher;
+    private string $teacherName;
 
-    public function __construct(int $id, string $name, string $location, string $teacher)
+    public function __construct(int $classID, string $className, string $location, string $teacherName)
     {
-        $this->id = $id;
-        $this->name = $name;
+        $this->classID = $classID;
+        $this->className = $className;
         $this->location = $location;
-        $this->teacher = $teacher;
+        $this->teacherName = $teacherName;
     }
 
-    public function getID()
+    public function getClassID()
     {
-        return $this->id;
+        return $this->classID;
     }
     
-    public function getName()
+    public function getClassName()
     {
-        return $this->name;
+        return $this->className;
     }
 
     public function getLocation()
@@ -32,10 +32,8 @@ class Classes
         return $this->location;
     }
 
-    public function getTeacher()
+    public function getTeacherName()
     {
-        return $this->teacher;
+        return $this->teacherName;
     }
-
-
 }

@@ -24,6 +24,8 @@ require'.env';
 
 require 'Model/student.php';
 require 'Model/studentLoader.php';
+require 'Model/class.php';
+require 'Model/classLoader.php';
 
 //include all your controllers here
 require 'Controller/studentController.php';
