@@ -63,6 +63,17 @@ Make sure we can view, add, edit and delete entries in the database.
   * Class names are shown instead of class ID in the overview and detailed view
     * still have to make the connection for the add and edit student select dropdowns
   * commit and push after today's tasks at :clock3: 3pm
+* Day 3 (:date: 08/12/2021)
+  * Since a lot of teams were missing at least one member on day 2, the deadline got pushed back by a day.
+  * Katya and Xiaoqi pulled in the latest update from the main branch and checked out the code to see if it made sense to them
+  * Since Sven already did a lot of coding for this project he decided to give the other 2 a chance to code their own pages while helping answer any questions they might have and also fixing some minor responsive style issues.
+  * By the end of day 3 the main branch holds a visually working product, although some of the functionality is still missing or broken.
+  * all pushes and merges done by :clock5: 5PM
+* Day 4 (:date: 09/12/2021)
+  * Sven fixed a minor error on the landing page and updated the readme before the start of class
+  * Plan for today:
+    * get all basic functionality in
+    * get the edge cases figured out
 
 ## To Do
 This to do list is for personal use, the full to do list is added at the start of the challenge and as we complete
@@ -78,25 +89,25 @@ objectives they will be moved up into the timeline section and ticked off using 
   * A page to edit an existing entity :heavy_check_mark:
   * A page to create a new entity :heavy_check_mark:
 * Teachers
-  * A general overview of all records of that entity in a table
-    * Each row should have a button to edit or delete the entity
-    * This page should have a "create new" button
+  * A general overview of all records of that entity in a table :heavy_check_mark:
+    * Each row should have a button to edit or delete the entity :heavy_check_mark:
+    * This page should have a "create new" button :heavy_check_mark:
   * A detailed overview of the selected entity
     * This should include a button to delete this entity
     * Edge case: A teacher cannot be removed if he is still assigned to a class
     * Edge case: If you remove a class, make sure to remove the link between the students and the class.
-  * A page to edit an existing entity
+  * A page to edit an existing entity :heavy_check_mark:
   * A page to create a new entity
 * Classes
-  * A general overview of all records of that entity in a table
-    * Each row should have a button to edit or delete the entity
-    * This page should have a "create new" button
+  * A general overview of all records of that entity in a table :heavy_check_mark:
+    * Each row should have a button to edit or delete the entity :heavy_check_mark:
+    * This page should have a "create new" button :heavy_check_mark:
   * A detailed overview of the selected entity
-    * This should include a button to delete this entity
+    * This should include a button to delete this entity :heavy_check_mark:
     * Edge case: A teacher cannot be removed if he is still assigned to a class
     * Edge case: If you remove a class, make sure to remove the link between the students and the class.
-  * A page to edit an existing entity
-  * A page to create a new entity
+  * A page to edit an existing entity :heavy_check_mark:
+  * A page to create a new entity :heavy_check_mark:
 
 #### Fields:
 On the general overview table you can yourself decide what would be useful information to show.
@@ -109,12 +120,12 @@ On the detailed overview you have to provide the following information:
   * Class (with clickable link)
   * Assigned teacher (clickable link - relation via class) 
 * Teacher
-  * Name
-  * Email
+  * Name :heavy_check_mark:
+  * Email :heavy_check_mark:
   * List of all students currently assigned to him (clickable link)
 * Class
-  * Name class (Giertz, Lamarr, ...)
-  * Location (Antwerp, Gent, Genk, Brussels, Liege)
+  * Name class (Giertz, Lamarr, ...) :heavy_check_mark:
+  * Location (Antwerp, Gent, Genk, Brussels, Liege) :heavy_check_mark:
   * Assigned teacher (clickable link)
   * List of assigned students (clickable link)
 
