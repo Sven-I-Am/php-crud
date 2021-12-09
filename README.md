@@ -25,7 +25,7 @@ Make sure we can view, add, edit and delete entries in the database.
 | ----------- | ----------- | ----------- |
 | ![windows10](Assets/images/windows10-logo.png) | ![php-storm](Assets/images/phpstorm-logo.png) | Sven & Katya |
 | ![macos](Assets/images/macOS-logo.png) | ![VSCode](Assets/images/vscode-logo.png) | Xiaoqi |
-| ![html](Assets/images/html-logo.png) | ![css](Assets/images/css-logo.png) | ![php](Assets/images/php-logo.jpg) |
+| ![html](Assets/images/html-logo.png) | ![css](Assets/images/CSS-logo.png) | ![php](Assets/images/php-logo.jpg) |
 | ![mySQL](Assets/images/mysql-logo.png) | ![git](Assets/images/git-logo.png) |  ![github](Assets/images/github-logo.png) |
 
 ## Timeline
