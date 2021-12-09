@@ -26,12 +26,19 @@
                     <td class="button-cell">
                         <a class="button-Link viewBtn" href="index.php?page=viewClass&id=<?php echo $eachClass["ID"]; ?>">View</a>
                     </td>
+                    
+                    
                     <td class="button-cell">
-                        <a class="button-Link editBtn" href="index.php?page=editClass&id=<?php echo $eachClass["ID"]; ?>">Edit</a>
+                        <?php if($eachClass["ID"] != 1){ ?>
+                            <a class="button-Link editBtn" href="index.php?page=editClass&id=<?php echo $eachClass["ID"]; ?>">Edit</a>
+                        <?php } ?>
                     </td>
                     <td class="button-cell">
-                        <a class="button-Link deleteBtn" href="index.php?page=deleteClass&id=<?php echo $eachClass["ID"]; ?>">Delete</a>
+                        <?php if($eachClass["ID"] != 1){ ?>
+                            <a class="button-Link deleteBtn" href="index.php?page=deleteClass&id=<?php echo $eachClass["ID"]; ?>">Delete</a>
+                        <?php } ?>
                     </td>
+                    
                 </tr>
             <?php } ?>
         </table>

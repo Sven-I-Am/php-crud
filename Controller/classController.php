@@ -56,11 +56,16 @@ class classController
                 break;
             case "deleteClass":
                 $classId = (int)$_GET["id"];
+                $oneClass = ClassLoader::getClass($this->db, $classId);
+                if(count($oneClass[0]["StudentName"]) === 0){
                 ClassLoader::deleteClass($this->db, $classId);
+               
+                }else {
+                    echo "<script type='text/javascript'>alert('Please Empty the class');</script>";
+                }
                 $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';
                 break;
-           
         }
     }
 }
