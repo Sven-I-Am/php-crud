@@ -9,6 +9,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Class</th>
+                    <th>Teacher</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
