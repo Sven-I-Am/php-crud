@@ -61,8 +61,7 @@ class classController
                 ClassLoader::deleteClass($this->db, $classId);
                
                 }else {
-                    // $error = []
-                    echo "<script type='text/javascript'>alert('Please Empty class');</script>";
+                    echo "<script type='text/javascript'>alert('Please Empty the class');</script>";
                 }
                 $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';

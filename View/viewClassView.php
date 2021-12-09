@@ -33,7 +33,6 @@
             <?php 
             if(count($oneClass[0]["StudentName"])>0){
                 ?>
-            
            <table>
                   <tr>
                       <th>ID</th>
@@ -45,7 +44,7 @@
                         <td><?php echo $student["ID"] ; ?></td>
                         <td><?php echo $student["Name"] ; ?></td>
                     </tr>
-                    <?php } ?>
+                    <?php }?>
            </table>
            <?php } ?>
         </div>
