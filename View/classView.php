@@ -22,7 +22,7 @@
                 <tr>
                     <td><?php echo $eachClass["Name"]; ?></td>
                     <td><?php echo $eachClass["Location"]; ?></td>
-                    <td><a href="index.php?page=viewTeacher&id=<?php echo $eachClass["TeacherName"]; ?>"><?php echo $eachClass["TeacherName"]; ?></a></td>
+                    <td><a class="table-link" href="index.php?page=viewTeacher&id=<?php echo $eachClass["Teacher"]; ?>"><?php echo $eachClass["TeacherName"]; ?></a></td>
                     <td class="button-cell">
                         <a class="button-Link viewBtn" href="index.php?page=viewClass&id=<?php echo $eachClass["ID"]; ?>">View</a>
                     </td>
