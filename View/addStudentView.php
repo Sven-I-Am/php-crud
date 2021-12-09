@@ -11,10 +11,11 @@
                     <input type="email" name="studentEmail" value="" placeholder="Enter student's Email" required>
                     <label>Class</label>
                     <select class="className" name="studentClass">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <?php
+                        foreach ($classes as $class) {?>
+                            <option value="<?php echo $class["ID"]; ?>"><?php echo $class["Name"]; ?></option>
+                        <?php } ?>
+
                     </select>
                     <input type="submit" class="button-Link addBtn" name="saveStudent" id="" value="Save new student">
                 </form>

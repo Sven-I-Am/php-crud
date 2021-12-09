@@ -9,7 +9,7 @@ class StudentLoader
         $students=[];
         foreach ($allStudents as $student){
             $student["ClassName"] = self::getClassName($PDO, $student["Class"]);
-            $student["TeacherName"] = self::getTeacherName($PDO, $student["Class"]);
+            $student["Teacher"] = self::getTeacherInfo($PDO, $student["Class"]);
             array_push($students, $student);
         }
         return $students;
@@ -19,7 +19,7 @@ class StudentLoader
         $handler = $PDO->query('SELECT * FROM student WHERE ID = ' . $id);
         $student = $handler->fetchAll(); //this is an array
         $student[0]["ClassName"] = self::getClassName($PDO, $student[0]["Class"]);
-        $student[0]["TeacherName"] = self::getTeacherName($PDO, $student[0]["Class"]);
+        $student[0]["Teacher"] = self::getTeacherInfo($PDO, $student[0]["Class"]);
         return $student;
     }
 
@@ -46,10 +46,10 @@ class StudentLoader
         return $className[0]["Name"];
     }
 
-    public static function getTeacherName(PDO $PDO, int $classID)
+    public static function getTeacherInfo(PDO $PDO, int $classID)
     {
-        $handler = $PDO->query('SELECT Name FROM teacher WHERE ID = (SELECT Teacher FROM class WHERE ID = ' . $classID . ')');
-        $teacherName= $handler->fetchAll(); //this is an array
-        return $teacherName[0]["Name"];
+        $handler = $PDO->query('SELECT * FROM teacher WHERE ID = (SELECT Teacher FROM class WHERE ID = ' . $classID . ')');
+        return $handler->fetchAll(); //this is an array
     }
+
 }

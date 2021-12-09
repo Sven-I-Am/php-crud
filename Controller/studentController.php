@@ -26,6 +26,7 @@ class StudentController
                 require 'View/viewStudentView.php';
                 break;
             case "addStudent":
+                $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/addStudentView.php';
                 break;
             case "studentAdd":
@@ -37,6 +38,7 @@ class StudentController
                 require 'View/studentView.php';
                 break;
             case "editStudent":
+                $classes = ClassLoader::getAllClasses($this->db);
                 $studentId = (int)$_GET["id"];
                 $student = StudentLoader::getStudent($this->db, $studentId);
                 require 'View/editStudentView.php';

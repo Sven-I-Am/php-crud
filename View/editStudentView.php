@@ -11,11 +11,12 @@
                 <label>Student Email</label>
                 <input type="email" name="studentEmail" value="<?php echo $student[0]["Email"] ?>" placeholder="Enter student's Email" required>
                 <label>Class</label>
-                <select class="className" id="className" name="studentClass">
-                    <option value="<?php echo $student[0]["Class"] ?>"><?php echo $student[0]["Class"] ?></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                <select class="className" name="studentClass">
+                    <?php
+                    foreach ($classes as $class) {?>
+                        <option value="<?php echo $class["ID"]; ?>"><?php echo $class["Name"]; ?></option>
+                    <?php } ?>
+
                 </select>
                 <input type="submit" class="button-Link addBtn" value="Save"></input>
                 <a class="button-Link deleteBtn" href="index.php?page=deleteStudent&id=<?php echo $student[0]["ID"]; ?>">Delete</a>

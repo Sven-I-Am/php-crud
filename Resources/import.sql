@@ -11,7 +11,7 @@ CREATE TABLE Class (
     Name varchar(255) NOT NULL,
     Location varchar(255) NOT NULL,
     Teacher INT UNSIGNED,
-    FOREIGN KEY (Teacher) REFERENCES Teacher(ID)
+    FOREIGN KEY (Teacher) REFERENCES Teacher(ID) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 DROP TABLE IF EXISTS Student;
@@ -20,18 +20,20 @@ CREATE TABLE Student (
     Name varchar(255) NOT NULL,
     Email varchar(255) NOT NULL,
     Class INT UNSIGNED,
-    FOREIGN KEY (Class) REFERENCES Class(ID)
+    FOREIGN KEY (Class) REFERENCES Class(ID) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
+INSERT INTO Teacher(Name, Email) VALUES ('Unasigned', ' ');
 INSERT INTO Teacher(Name, Email) VALUES ('Tim Broos', 'tim.broos@becode.org');
 INSERT INTO Teacher(Name, Email) VALUES ('Ludovic Patho', 'ludovic.patho@becode.org');
 INSERT INTO Teacher(Name, Email) VALUES ('Arnaud Duchemin', 'arnaud.uchemin@becode.org');
 INSERT INTO Teacher(Name, Email) VALUES ('Nicolas Jamar', 'nicolas.jamar@becode.org');
 
-INSERT INTO Class(Name, Location, Teacher) VALUES ('Lamarr', 'Antwerpen', 1);
-INSERT INTO Class(Name, Location, Teacher) VALUES ('Jepsen', 'Liege', 4);
-INSERT INTO Class(Name, Location, Teacher) VALUES ('Keller', 'Charleroi', 3);
-INSERT INTO Class(Name, Location, Teacher) VALUES ('Swartz', 'Brussel', 2);
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Unasigned', ' ', 1);
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Lamarr', 'Antwerpen', 2);
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Jepsen', 'Liege', 5);
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Keller', 'Charleroi', 4);
+INSERT INTO Class(Name, Location, Teacher) VALUES ('Swartz', 'Brussel', 3);
 
 INSERT INTO student (Name, Email, Class) values ('Katya Heylen', 'katyaheylen@gmail.com', 1);
 INSERT INTO student (Name, Email, Class) values ('Sven Vander Mierde', 'sven.vander.mierde@gmail.com', 1);

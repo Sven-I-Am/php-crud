@@ -5,7 +5,7 @@
     --bg-color-light: hsl(207, 0%, 82%);
     --text-color-dark: hsl(207, 50%, 10%);
     --text-color-light: hsl(207, 35%, 85%);
-    --higlight1: hsl(7,55%,44%);
+    --highlight1: hsl(7,55%,44%);
     --highlight2: hsl(185,38%,57%);
     --highlight3: hsl(132,38%,57%);
 }
@@ -79,7 +79,7 @@ main {
     background: var(--highlight2);
 }
 .deleteBtn {
-    background: var(--higlight1);
+    background: var(--highlight1);
 }
 .addBtn {
     background: var(--highlight3);
@@ -93,6 +93,12 @@ table {
 td {
     padding: 1em 2em 1em 0.2em;
     border: 2px solid var(--text-color-dark);
+}
+.table-Link{
+    border-bottom: 2px solid var(--highlight2);
+}
+.table-Link:hover {
+    border-bottom: 2px solid var(--highlight1);
 }
 form {
     display: flex;
