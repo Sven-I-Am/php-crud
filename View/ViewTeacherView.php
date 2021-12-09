@@ -24,6 +24,25 @@
                     </td>
                 </tr>
             </table>
+<!--            <h4>List of Students</h4>-->
+<!--            --><?php
+//            if(count($teacher[0]["StudentName"])>0){
+//                ?>
+<!---->
+<!--                <table>-->
+<!--                    <tr>-->
+<!--                        <th>ID</th>-->
+<!--                        <th>Name</th>-->
+<!--                    </tr>-->
+<!--                    --><?php
+//                    foreach ($oneClass[0]["StudentName"] as $student){ ?>
+<!--                        <tr>-->
+<!--                            <td>--><?php //echo $student["ID"] ; ?><!--</td>-->
+<!--                            <td>--><?php //echo $student["Name"] ; ?><!--</td>-->
+<!--                        </tr>-->
+<!--                    --><?php //} ?>
+<!--                </table>-->
+<!--            --><?php //} ?>
         </div>
     </section>
 <?php require 'includes/footer.php' ?>
