@@ -11,14 +11,16 @@
                     <input type="text" name="loction" value="" placeholder="Enter Location" required>
                     <label>Teacher</label>
                     <select class="teacherName" name="teacherName">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <?php 
+                        foreach ($allTeachers as $teacher) { ?>
+                            <option value="<?php echo $teacher["ID"]; ?>"><?php echo $teacher["Name"]; ?></option>
+                        <?php } ?>
                     </select>
                     <input type="submit" class="button-Link addBtn" name="saveClass" id="" value="Save new class">
                 </form>
             </div>
         </div>
     </section>
+        
+
 <?php require 'includes/footer.php' ?>

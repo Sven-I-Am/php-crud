@@ -30,6 +30,7 @@ class classController
                 require 'View/viewTeachersView.php';
                 break;
             case "addClass":
+                $allTeachers = TeacherLoader::getAllTeachers($this->db);
                 require 'View/addClassView.php';
                 break;
             case "classAdd":
@@ -43,6 +44,7 @@ class classController
             case "editClass":
                 $classId = (int)$_GET["id"];
                 $oneClass = ClassLoader::getClass($this->db, $classId);
+                $allTeachers = TeacherLoader::getAllTeachers($this->db);
                 require 'View/editClassView.php';
                 break;
             case "classEdit":
