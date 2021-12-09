@@ -7,7 +7,7 @@ Anything complex should be calculated in the model -->
         <div class="button-div">
             <a class="button-Link addBtn" href="index.php?page=addStudent">Add a student</a>
         </div>
-        <form method="POST" action="index.php?page=students">
+        <form id="studentFilter" method="POST" action="index.php?page=students">
             <div>
             <label for="filterClass">Show only students in class:</label>
             <select class="filterClass" name="filterClass" id="filterClass">
