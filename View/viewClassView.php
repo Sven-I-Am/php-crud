@@ -30,6 +30,7 @@
                    <?php
                    foreach ($oneClass as $class){ ?>
                     <tr>
+                    <td><?php echo $class["StudentName"][0]["ID"] ; ?></td>
                         <td><?php echo $class["StudentName"][0]["Name"] ; ?></td>
                     </tr>
                     <?php } ?>

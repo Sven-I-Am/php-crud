@@ -31,7 +31,7 @@ class ClassLoader
     }
 
     public static function getStudentName(PDO $PDO, int $classID){
-        $handler = $PDO->query('SELECT Name FROM student WHERE Class = (SELECT ID FROM class WHERE ID = ' . $classID . ')');
+        $handler = $PDO->query('SELECT * FROM student WHERE Class = (SELECT ID FROM class WHERE ID = ' . $classID . ')');
         $studentName = $handler->fetchAll();
         return $studentName;
     }
