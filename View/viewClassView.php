@@ -40,6 +40,8 @@
                     <tr>
                         <td><?php echo $student["ID"] ; ?></td>
                         <td><?php echo $student["Name"] ; ?></td>
+                        <td><?php echo $student["Email"] ; ?></td>
+
                     </tr>
                     <?php } ?>
            </table>

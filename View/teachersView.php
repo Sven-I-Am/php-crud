@@ -20,10 +20,10 @@
                 foreach ($teachers as $teacher){ ?>
                     <tr>
                         <td><?php echo $teacher["ID"]; ?></td>
-                        <td><?php echo $teacher["Name"]; ?></td>
+                        <td><a class="table-Link" href="index.php?page=viewTeacher&id=<?php echo $teacher["ID"]; ?>"><?php echo $teacher["Name"]; ?></a></td>
                         <td><?php echo $teacher["Email"]; ?></td>
                         <td class="button-cell">
-                            <a class="button-Link viewBtn" href="index.php?page=viewTeacher&id=<?php echo $teacher["ID"]; ?>">View</a>
+                            <a class="button-Link viewBtn" href="index.php?page=viewClass&id=<?php echo $teacher["ID"]; ?>">View</a>
                         </td>
                         <td class="button-cell">
                             <a class="button-Link editBtn" href="index.php?page=editTeacher&id=<?php echo $teacher["ID"]; ?>">Edit</a>

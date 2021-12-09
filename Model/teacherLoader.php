@@ -52,5 +52,4 @@ class TeacherLoader
         $teacherEmail = $handler->fetchAll(); //this is an array
         return $teacherEmail[0]["Name"];
     }
-
 }
