@@ -1,5 +1,5 @@
 <?php
-//
+
 class StudentLoader
 {
     public static function getAllStudents(PDO $PDO): array
@@ -15,7 +15,8 @@ class StudentLoader
         return $students;
     }
 
-    public static function getStudent(PDO $PDO, int $id){
+    public static function getStudent(PDO $PDO, int $id): array
+    {
         $handler = $PDO->query('SELECT * FROM student WHERE ID = ' . $id);
         $student = $handler->fetchAll(); //this is an array
         $student[0]["ClassName"] = self::getClassName($PDO, $student[0]["Class"]);
@@ -25,15 +26,15 @@ class StudentLoader
 
     public static function addStudent(PDO $PDO, string $name, string $email, int $class)
     {
-        $handler = $PDO->query('INSERT INTO student(Name, Email, Class) VALUES ("'. $name . '", "' . $email . '", ' . $class . ')');
+        $PDO->query('INSERT INTO student(Name, Email, Class) VALUES ("'. $name . '", "' . $email . '", ' . $class . ')');
     }
 
     public static function deleteStudent(PDO $PDO, int $id)
     {
-        $handler = $PDO->query('DELETE FROM student WHERE ID = '. $id);
+        $PDO->query('DELETE FROM student WHERE ID = '. $id);
     }
 
-    public static function editStudent(PDO $PDO, int $id, string $name, string $email, int $class)
+    public static function editStudent(PDO $PDO, int $id, string $name, string $email, int $class): array
     {
         $handler = $PDO->query('UPDATE student SET ID=' . $id . ', Name="' . $name . '", Email="' . $email . '", Class=' . $class . ' WHERE ID=' . $id);
         return $handler->fetchAll(); //this is an array
@@ -46,7 +47,7 @@ class StudentLoader
         return $className[0]["Name"];
     }
 
-    public static function getTeacherInfo(PDO $PDO, int $classID)
+    public static function getTeacherInfo(PDO $PDO, int $classID): array
     {
         $handler = $PDO->query('SELECT * FROM teacher WHERE ID = (SELECT Teacher FROM class WHERE ID = ' . $classID . ')');
         return $handler->fetchAll(); //this is an array

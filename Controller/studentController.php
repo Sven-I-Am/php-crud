@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class StudentController
+class studentController
 {
     private Connection $db;
 
@@ -18,16 +18,16 @@ class StudentController
         switch($_GET["page"]){
             case "students":
                 $students = StudentLoader::getAllStudents($this->db);
-                require 'View/studentView.php';
+                require 'View/students/studentView.php';
                 break;
             case "viewStudent":
                 $studentId = (int)$_GET["id"];
                 $student = StudentLoader::getStudent($this->db, $studentId);
-                require 'View/viewStudentView.php';
+                require 'View/students/viewStudentView.php';
                 break;
             case "addStudent":
                 $classes = ClassLoader::getAllClasses($this->db);
-                require 'View/addStudentView.php';
+                require 'View/students/addStudentView.php';
                 break;
             case "studentAdd":
                 $studentName = $_POST["studentName"];
@@ -35,13 +35,13 @@ class StudentController
                 $studentClass = (int)$_POST["studentClass"];
                 $student = StudentLoader::addStudent($this->db, $studentName, $studentEmail, $studentClass);
                 $students = StudentLoader::getAllStudents($this->db);
-                require 'View/studentView.php';
+                require 'View/students/studentView.php';
                 break;
             case "editStudent":
                 $classes = ClassLoader::getAllClasses($this->db);
                 $studentId = (int)$_GET["id"];
                 $student = StudentLoader::getStudent($this->db, $studentId);
-                require 'View/editStudentView.php';
+                require 'View/students/editStudentView.php';
                 break;
             case "studentEdit":
                 $studentId = (int)$_GET["id"];
@@ -50,13 +50,13 @@ class StudentController
                 $studentClass = (int)$_POST["studentClass"];
                 $student = StudentLoader::editStudent($this->db, $studentId, $studentName, $studentEmail, $studentClass);
                 $students = StudentLoader::getAllStudents($this->db);
-                require 'View/studentView.php';
+                require 'View/students/studentView.php';
                 break;
             case "deleteStudent":
                 $studentId = (int)$_GET["id"];
                 StudentLoader::deleteStudent($this->db, $studentId);
                 $students = StudentLoader::getAllStudents($this->db);
-                require 'View/studentView.php';
+                require 'View/students/studentView.php';
                 break;
         }
 
