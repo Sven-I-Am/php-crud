@@ -24,6 +24,16 @@
                     </td>
                 </tr>
             </table>
+
+            <h4>List of Students</h4>
+           <table>
+                   <?php
+                   foreach ($oneClass as $class){ ?>
+                    <tr>
+                        <td><?php echo $class["StudentName"][0]["Name"] ; ?></td>
+                    </tr>
+                    <?php } ?>
+           </table>
         </div>
     </section>
 <?php require 'includes/footer.php' ?>

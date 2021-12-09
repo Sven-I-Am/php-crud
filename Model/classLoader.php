@@ -19,14 +19,21 @@ class ClassLoader
         $handler = $PDO->query('SELECT * FROM Class WHERE ID = '. $classID);
         $oneClass = $handler->fetchAll();
         $oneClass[0]["TeacherName"] = self::getTeacherName($PDO, $oneClass[0]["Teacher"]);
+        $oneClass[0]["StudentName"] = self::getStudentName($PDO, $oneClass[0]["ID"]);
         return $oneClass;
     }
 
     public static function getTeacherName(PDO $PDO, int $teacherID)
     {
-        $handler = $PDO->query('SELECT Name From Teacher WHERE ID = '. $teacherID);
+        $handler = $PDO->query('SELECT Name FROM Teacher WHERE ID = '. $teacherID);
         $teacherName = $handler->fetchAll();
         return $teacherName[0]["Name"];
+    }
+
+    public static function getStudentName(PDO $PDO, int $classID){
+        $handler = $PDO->query('SELECT Name FROM student WHERE Class = (SELECT ID FROM class WHERE ID = ' . $classID . ')');
+        $studentName = $handler->fetchAll();
+        return $studentName;
     }
 
     public static function addClass(PDO $PDO, string $className, string $location, int $teacherName)
