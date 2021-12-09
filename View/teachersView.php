@@ -26,15 +26,18 @@
                             <a class="button-Link viewBtn" href="index.php?page=viewClass&id=<?php echo $teacher["ID"]; ?>">View</a>
                         </td>
                         <td class="button-cell">
-                            <a class="button-Link editBtn" href="index.php?page=editTeacher&id=<?php echo $teacher["ID"]; ?>">Edit</a>
+                            <?php if($teacher["ID"] != 1){ ?>
+                                <a class="button-Link editBtn" href="index.php?page=editTeacher&id=<?php echo $teacher["ID"]; ?>">Edit</a>
+                            <?php } ?>
                         </td>
                         <td class="button-cell">
-                            <a class="button-Link deleteBtn" href="index.php?page=deleteTeacher&id=<?php echo $teacher["ID"]; ?>">Delete</a>
+                            <?php if($teacher["ID"] != 1){ ?>
+                                <a class="button-Link deleteBtn" href="index.php?page=deleteTeacher&id=<?php echo $teacher["ID"]; ?>">Delete</a>
+                            <?php } ?>
                         </td>
                     </tr>
                 <?php } ?>
             </table>
-
         </div>
     </section>
 <?php require 'includes/footer.php' ?>
