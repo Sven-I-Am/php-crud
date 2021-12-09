@@ -92,17 +92,17 @@ objectives they will be moved up into the timeline section and ticked off using 
   * A general overview of all records of that entity in a table :heavy_check_mark:
     * Each row should have a button to edit or delete the entity :heavy_check_mark:
     * This page should have a "create new" button :heavy_check_mark:
-  * A detailed overview of the selected entity
-    * This should include a button to delete this entity
+  * A detailed overview of the selected entity :heavy_check_mark:
+    * This should include a button to delete this entity :heavy_check_mark:
     * Edge case: A teacher cannot be removed if he is still assigned to a class
     * Edge case: If you remove a class, make sure to remove the link between the students and the class.
   * A page to edit an existing entity :heavy_check_mark:
-  * A page to create a new entity
+  * A page to create a new entity :heavy_check_mark:
 * Classes
   * A general overview of all records of that entity in a table :heavy_check_mark:
     * Each row should have a button to edit or delete the entity :heavy_check_mark:
     * This page should have a "create new" button :heavy_check_mark:
-  * A detailed overview of the selected entity
+  * A detailed overview of the selected entity :heavy_check_mark:
     * This should include a button to delete this entity :heavy_check_mark:
     * Edge case: A teacher cannot be removed if he is still assigned to a class
     * Edge case: If you remove a class, make sure to remove the link between the students and the class.
@@ -117,8 +117,8 @@ On the detailed overview you have to provide the following information:
 * Student 
   * Name :heavy_check_mark:
   * Email :heavy_check_mark:
-  * Class (with clickable link)
-  * Assigned teacher (clickable link - relation via class) 
+  * Class (with clickable link) :heavy_check_mark:
+  * Assigned teacher (clickable link - relation via class)  :heavy_check_mark:
 * Teacher
   * Name :heavy_check_mark:
   * Email :heavy_check_mark:
@@ -126,8 +126,8 @@ On the detailed overview you have to provide the following information:
 * Class
   * Name class (Giertz, Lamarr, ...) :heavy_check_mark:
   * Location (Antwerp, Gent, Genk, Brussels, Liege) :heavy_check_mark:
-  * Assigned teacher (clickable link)
-  * List of assigned students (clickable link)
+  * Assigned teacher (clickable link) :heavy_check_mark:
+  * List of assigned students (clickable link) :heavy_check_mark:
 
 ### Nice to have
 
