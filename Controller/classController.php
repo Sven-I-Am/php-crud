@@ -62,7 +62,7 @@ class classController
                
                 }else {
                     // $error = []
-                     echo "Please empty the class";
+                    echo "<script type='text/javascript'>alert('Please Empty class');</script>";
                 }
                 $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';
