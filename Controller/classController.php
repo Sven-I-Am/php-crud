@@ -59,12 +59,12 @@ class classController
                 $oneClass = ClassLoader::getClass($this->db, $classId);
                 if(count($oneClass[0]["StudentName"]) === 0){
                 ClassLoader::deleteClass($this->db, $classId);
-                $classes = ClassLoader::getAllClasses($this->db);
-                
-                
+               
                 }else {
-                    // echo "Please empty the class";
+                    // $error = []
+                     echo "Please empty the class";
                 }
+                $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';
                 break;
         }
