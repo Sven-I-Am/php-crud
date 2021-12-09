@@ -55,7 +55,9 @@ class classController
                 $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';
                 break;
-                
+            case "viewTeacher":
+                require 'View/teachersView.php';
+                break;
         }
     }
 }
