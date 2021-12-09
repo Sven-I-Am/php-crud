@@ -38,6 +38,7 @@
                     </tr>
                 <?php } ?>
             </table>
+
         </div>
     </section>
 <?php require 'includes/footer.php' ?>
