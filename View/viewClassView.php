@@ -37,6 +37,7 @@
                   <tr>
                       <th>ID</th>
                       <th>Name</th>
+                      <th>Email</th>
                   </tr>
                    <?php
                    foreach ($oneClass[0]["StudentName"] as $student){ ?>

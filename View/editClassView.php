@@ -11,12 +11,12 @@
                 <label>Location</label>
                 <input type="text" name="location" value="<?php echo $oneClass[0]["Location"] ?>" placeholder="Enter student's name" required>
                 <label>Teacher Name</label>
-                <select class="teacherName" id="teacherName" name="teacherName">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="3">4</option>
-                </select>
+                <select class="teacherName" name="teacherName">
+                        <?php 
+                        foreach ($allTeachers as $teacher) { ?>
+                            <option value="<?php echo $teacher["ID"]; ?>"><?php echo $teacher["Name"]; ?></option>
+                        <?php } ?>
+                    </select>
                 <input type="submit" class="button-Link addBtn" value="Save"></input>
                 <a class="button-Link deleteBtn" href="index.php?page=deleteClass&id=<?php echo $oneClass[0]["ID"]; ?>">Delete</a>
             </form>
