@@ -17,7 +17,13 @@ class studentController
         //load the view
         switch($_GET["page"]){
             case "students":
-                $students = StudentLoader::getAllStudents($this->db);
+                $classes = ClassLoader::getAllClasses($this->db);
+                if(isset($_POST["filterClass"])){
+                    $classId = $_POST["filterClass"];
+                    $students = StudentLoader::filterStudents($this->db, $classId);
+                } else {
+                    $students = StudentLoader::getAllStudents($this->db);
+                }
                 require 'View/students/studentView.php';
                 break;
             case "viewStudent":
@@ -35,6 +41,7 @@ class studentController
                 $studentClass = (int)$_POST["studentClass"];
                 $student = StudentLoader::addStudent($this->db, $studentName, $studentEmail, $studentClass);
                 $students = StudentLoader::getAllStudents($this->db);
+                $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/students/studentView.php';
                 break;
             case "editStudent":
@@ -50,12 +57,14 @@ class studentController
                 $studentClass = (int)$_POST["studentClass"];
                 $student = StudentLoader::editStudent($this->db, $studentId, $studentName, $studentEmail, $studentClass);
                 $students = StudentLoader::getAllStudents($this->db);
+                $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/students/studentView.php';
                 break;
             case "deleteStudent":
                 $studentId = (int)$_GET["id"];
                 StudentLoader::deleteStudent($this->db, $studentId);
                 $students = StudentLoader::getAllStudents($this->db);
+                $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/students/studentView.php';
                 break;
         }

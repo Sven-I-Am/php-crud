@@ -7,6 +7,23 @@ Anything complex should be calculated in the model -->
         <div class="button-div">
             <a class="button-Link addBtn" href="index.php?page=addStudent">Add a student</a>
         </div>
+        <form method="POST" action="index.php?page=students">
+            <div>
+            <label for="filterClass">Show only students in class:</label>
+            <select class="filterClass" name="filterClass" id="filterClass">
+                <?php
+                foreach ($classes as $class) {?>
+                    <option value="<?php echo $class["ID"]; ?>"><?php echo $class["Name"]; ?></option>
+                <?php } ?>
+            </select>
+            </div>
+            <div class="studentFilterButtons">
+            <input type="submit" class="button-Link addBtn" value="Show results">
+            </div>
+            <div class="studentFilterButtons">
+            <a href="index.php?page=students"class="button-Link deleteBtn">Remove filters</a>
+            </div>
+        </form>
         <table>
             <tr>
                 <th>Name</th>

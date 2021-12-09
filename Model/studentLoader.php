@@ -15,6 +15,19 @@ class StudentLoader
         return $students;
     }
 
+    public static function filterStudents(PDO $PDO, $classId): array
+    {
+        $handler = $PDO->query('SELECT * FROM student WHERE Class = ' . $classId);
+        $filteredStudents= $handler->fetchAll(); //this is an array
+        $students=[];
+        foreach ($filteredStudents as $student){
+            $student["ClassName"] = self::getClassName($PDO, $student["Class"]);
+            $student["Teacher"] = self::getTeacherInfo($PDO, $student["Class"]);
+            array_push($students, $student);
+        }
+        return $students;
+    }
+
     public static function getStudent(PDO $PDO, int $id): array
     {
         $handler = $PDO->query('SELECT * FROM student WHERE ID = ' . $id);
