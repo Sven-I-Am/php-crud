@@ -17,9 +17,9 @@ class TeacherLoader
         $handler = $PDO->query('SELECT * FROM teacher WHERE ID = ' . $id);
         return $handler->fetchAll();
     }
-    public static function addTeacher(PDO $PDO, int $id, string $name, int $email)
+    public static function addTeacher(PDO $PDO, string $name, string $email)
     {
-        $handler = $PDO->query('INSERT INTO teacher (ID, Name, Email) VALUES ("'. $id . '", "' . $name . '", ' . $email . ')');
+        $handler = $PDO->query('INSERT INTO teacher(Name, Email) VALUES ("'. $name . '", "' . $email . '")');
     }
 
     public static function deleteTeacher(PDO $PDO, int $id)
@@ -29,7 +29,7 @@ class TeacherLoader
 
     public static function editTeacher(PDO $PDO, int $id, string $name, string $email)
     {
-        $handler = $PDO->query('UPDATE teacher SET ID=' . $id . ', Name="' . $name . '", Email="' . $email . ' WHERE ID=' . $id);
+        $handler = $PDO->query('UPDATE teacher SET ID=' . $id . ', Name="' . $name . '", Email="' . $email . '" WHERE ID=' . $id);
         return $handler->fetchAll(); //this is an array
     }
 

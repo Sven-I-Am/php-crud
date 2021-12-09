@@ -4,7 +4,7 @@
     <section id="teachers">
 
         <div id="editTeacher">
-            <form method="POST" action="index.php?page=editTeacher&id=<?php echo $teacher[0]["ID"]; ?>">
+            <form method="POST" action="index.php?page=teacherEdit&id=<?php echo $teacher[0]["ID"]; ?>">
                 <label>Teacher ID</label>
                 <input type="text" name="teacherId" value="<?php echo $teacher[0]["ID"] ?>" disabled>
                 <label>Teacher Name</label>

@@ -34,7 +34,7 @@ if(empty($_GET) || $_GET["page"] === "home"){
     $homeController->render($_GET, $_POST);
 }else if($_GET["page"] === "students" || $_GET["page"] === "addStudent" || $_GET["page"] === "studentAdd" || $_GET["page"] === "viewStudent" || $_GET["page"] === "editStudent" || $_GET["page"] === "studentEdit" || $_GET["page"] === "deleteStudent"){
     $studentController->render($_GET, $_POST);
-}else if(empty($_GET) || $_GET["page"] === "teachers" || $_GET["page"] === "viewTeacher" || $_GET["page"] === "addTeacher" || $_GET["page"] === "teacherAdd" || $_GET["page"] === "editTeacher" || $_GET["page"] === "teacherEdit" || $_GET["page"] === "deleteTeacher") {
+}else if($_GET["page"] === "teachers" || $_GET["page"] === "viewTeacher" || $_GET["page"] === "addTeacher" || $_GET["page"] === "teacherAdd" || $_GET["page"] === "editTeacher" || $_GET["page"] === "teacherEdit" || $_GET["page"] === "deleteTeacher") {
     $teacherController->render($_GET, $_POST);
 } else if($_GET["page"] === "classes" || $_GET["page"] === "addClass" || $_GET["page"] === "classAdd" || $_GET["page"] === "viewClass" || $_GET["page"] === "editClass" || $_GET["page"] === "classEdit" || $_GET["page"] === "deleteClass"){
     $classController->render($_GET, $_POST);
