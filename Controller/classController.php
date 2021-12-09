@@ -24,6 +24,11 @@ class classController
                 $oneClass = ClassLoader::getClass($this->db, $classId);
                 require 'View/viewClassView.php';
                 break;
+            case "viewTeacher":
+                $teacherId = (int)$_GET["id"];
+                $teacherView = ClassLoader::getTeacherName($this->db, $teacherId);
+                require 'View/viewTeachersView.php';
+                break;
             case "addClass":
                 require 'View/addClassView.php';
                 break;
@@ -55,9 +60,7 @@ class classController
                 $classes = ClassLoader::getAllClasses($this->db);
                 require 'View/classView.php';
                 break;
-            case "viewTeacher":
-                require 'View/teachersView.php';
-                break;
+           
         }
     }
 }
